@@ -1,0 +1,601 @@
+/*
+Theme Name: Ludwig Henriques
+Text Domain: ludwighenriques
+Version: 1.0
+Requires at least: 4.7
+Requires PHP: 5.2.4
+Description: Thème personnalisé
+Tags: ludwig henriques
+Author: the WordPress team
+Author URI: Ludwig Henriques
+Theme URI: 
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+All files, unless otherwise stated, are released under the GNU General Public
+License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned
+with others.
+*/
+
+
+/* GENERAL */
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  position: relative;
+}
+
+section {
+  min-height: 300px;
+  padding: 2em 0;
+}
+
+.section-dark {
+  background: #0B3C5D;
+  background-image: url(assets/images/concrete-wall.png);
+}
+
+section h2,
+section h3 {
+  text-align: center;
+}
+
+section h2 {
+  color: #1D2731;
+}
+
+section.section-dark h2 {
+  color: #fff;
+}
+
+section h3 {
+  color: #D9B310;
+  font-weight: 300;
+  font-size: 25px;
+  position: relative;
+}
+
+section h3::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 3px;
+  background-color: #D9B310;
+  bottom: -20px;
+  left: calc(50% - 50px);
+}
+
+.blue {
+  color: #0069d6;
+}
+
+.background {
+  position: absolute; 
+  display: block;
+  top: 0;  
+  left: 0;  
+  z-index: 0;
+}
+
+.certification-opquast {
+  position: absolute;
+  width: 130px;
+  height: auto;
+  top: -2px;
+  right: 0;
+  z-index:2;
+}
+
+@media screen and (max-width: 1199px) {
+  .certification-opquast {
+    display: none;
+  }
+}
+
+/* HEADER */
+
+header {
+  background-color: transparent;
+  position: fixed; 
+  top: 30px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transition: all ease-in-out 0.3s;
+}
+
+#navbar-home {
+  background-color: transparent;
+  /* border-bottom: 1px solid #D9B310; */
+  position: relative;
+  padding: 1rem 2rem;
+} 
+
+#navbar-home:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.4;
+  z-index: -1;
+} 
+
+header.fixed #navbar-home:before {
+  background-color: #0B3C5D;
+  opacity: 1;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,.2);
+}
+
+.navbar-dark .navbar-brand {
+  color: #D9B310;
+}
+
+#navbar-home .navbar-brand .navbar-brand-title{
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 28px;
+  line-height: 1.1;
+}
+#navbar-home .navbar-brand .navbar-brand-slogan{
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+#navbar-home .navbar-brand .navbar-brand-logo{
+  font-size: 25px;
+  border-right: 2px solid #D9B310;
+
+}
+
+#navbar-home .navbar-brand .navbar-brand-logo img{
+  height: 40px;
+  width: 35px;
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 4000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 4000ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spin;
+  -ms-animation-duration: 4000ms;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  
+  animation-name: spin;
+  animation-duration: 4000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+#navbar-home .navbar-nav .nav-link {
+  font-size: 20px;
+}
+
+#navbar-home .navbar-nav {
+  margin-right: 110px;
+}
+
+@media screen and (max-width: 575px) {
+  header #navbar-home:before {
+    background-color: #0B3C5D;
+    opacity: 1;
+    box-shadow: 0 0 7px 0 rgba(0,0,0,.2);
+  }
+}
+
+/* HEADING */
+
+#heading{
+  height: 100vh;
+  min-height: 450px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 0;
+}
+
+.header__background {
+  
+  position: absolute; 
+  display: block;
+  top: 0; 
+  left: 0;
+  z-index: -1;
+}
+
+#heading:before {
+  background-color: #1D2731;
+  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  display: inline-block;
+  content: "";
+  z-index: -1;
+  -webkit-transform: translate3d(0, 0, -1px);
+}
+
+#heading .heading-description{
+  padding-top: 90px;
+  color: #fff;
+}
+
+#heading .heading-description h1{
+  font-weight: 200;
+}
+
+#heading .heading-description h2{
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.8rem;
+  margin-bottom: 1.5em;
+  color: #D9B310;
+}
+
+#heading .heading-description p{
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1;
+  margin-bottom: 1.5em;
+}
+
+#heading .btn-services {
+  background-color: #1D2731;
+  border: 1px solid #1D2731;
+  color: #D9B310;
+}
+
+#heading .btn-contact {
+  background-color: #D9B310;
+  border: 1px solid #D9B310;
+  color: #1D2731;
+}
+
+#heading .btn-services:hover,
+#heading .btn-contact:hover {
+  background-color: #fff;
+  border: 1px solid #1D2731;
+  color: #1D2731;
+}
+
+#heading a.next-link {
+  position: absolute;
+  bottom: 40px;
+  left: calc(50% - 11px);
+  padding: 15px 2px 0px;
+  border: 1px solid #D9B310;
+  border-radius: 10px;
+  color: #D9B310;
+}
+
+/* SERVICES */
+
+.card-icon svg {
+  fill: #D9B310;
+}
+
+/* COMPETENCES */
+
+#competences .progress
+{
+    height: 35px;
+    margin: 30px 20px;
+    backface-visibility: #fff;
+}
+
+#competences .progress-bar
+{
+    background: #D9B310;
+}
+
+#competences .progress h4
+{
+    font-size: 14px;
+    color: #fff;
+    /* text-shadow: 1px 1px 1px black; */
+}
+
+/* TARIFS */
+
+#tarifs .card {
+  border: none;
+  text-align: center;
+}
+
+#tarifs .card-body {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#tarifs h4 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.3em;
+  position: relative;
+  margin-bottom: 1.5em;
+}
+
+#tarifs .card-price {
+  position: relative;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+
+#tarifs h4:after,
+#tarifs .card-price:after {
+  content: '';
+  position: absolute;
+  width: 25%;
+  height: 3px;
+  background-color: #D9B310;
+  bottom: -15px;
+  left: calc(50% - 12.5%);
+}
+
+#tarifs .card-price-text {
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+#tarifs .card-price-amount {
+  font-size: 3em;
+  font-weight: 600;
+  color: #0B3C5D;
+  line-height: 1;
+}
+
+#tarifs .card-price-amount sup {
+  font-size: 0.5em;
+  font-weight: 300;
+}
+
+#tarifs .card-price-detail{
+  text-align: left;
+}
+
+#tarifs .card-price-detail .row-alt {
+  background-color: #0b3c5d15;
+}
+
+#tarifs li.row {
+  margin-right: 0;
+  margin-left: 0;
+  font-size: 0.8em;
+  padding: 0.5em 0;
+}
+
+#tarifs li .col-icon {
+  padding: 0 10px;
+  text-align: center;
+}
+
+#tarifs li .col-libelle {
+  padding-left: 0;
+  padding-right: 10px;
+}
+
+.btn-contact-link {
+  margin-top: 1rem;
+  background-color: #D9B310;
+  font-weight: 500;
+}
+
+.btn-contact-link:hover {
+  background-color: #0B3C5D;
+  color: #fff;
+}
+
+/* Contact */
+
+#contact h4 {
+  position: relative;
+}
+
+#contact h4:after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 3px;
+  background-color: #D9B310;
+  bottom: -10px;
+  left: 0;
+}
+
+#contact .contact-informations-list .contact-informations-item {
+  padding: 1em 0;
+}
+
+#contact .contact-informations-list .contact-informations-item:not(:last-child) {
+  border-bottom: 1px solid #D9B310;
+}
+
+#contact .contact-informations-list .contact-informations-phone a {
+  color: #D9B310
+}
+
+#contact .btn-submit-contact {
+  background-color: #1D2731;
+  border: 1px solid #1D2731;
+  color: #D9B310;
+}
+
+#contact .btn-submit-contact:hover {
+  background-color: #D9B310;
+  border: 1px solid #D9B310;
+  color: #fff;
+}
+
+#contact .row span input {
+  width: 100%
+}
+
+.wpcf7-form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+span.wpcf7-not-valid-tip {
+  color: #C82334;
+}
+
+.wpcf7-form-control.g-recaptcha.wpcf7-recaptcha {
+    height: 100%;
+    border: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.screen-reader-response {
+  display: none
+}
+
+.wpcf7-response-output {
+  color: #C82334;
+  margin-top: 0.5rem;
+}
+
+/* FOOTER */
+
+footer
+{
+    background-color: #1D2731;
+    padding: 0px 0 20px 0;
+    color: #fff;
+}
+
+footer .fas
+{
+    font-size: 25px;
+    margin: 20px ;
+    color: #D9B310;
+    height: 30px;
+}
+
+footer .fas:hover
+{
+    font-size: 27px;
+}
+
+footer h5
+{
+    color: #000;
+}
+
+footer a
+{
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease-in 0s;
+}
+
+footer a:hover,
+footer #legacy a:hover
+{
+    color: #D9B310;
+    text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .modal-dialog {
+      max-width: 750px;
+      margin: 1.75rem auto;
+  }
+}
+
+#social-icons a
+{
+    display: inline-block;
+    line-height: 1px;
+    padding: 0px 10px;
+}
+
+footer #legacy,
+footer #legacy a {
+  color: #000;
+}
+
+#social-icons i
+{
+    font-size: 22px;
+    color: #fff;
+    transition: all 0.3s ease-in 0s;
+}
+
+#social-icons i:hover
+{
+    color: #D9B310;
+}
+
+.git-hub
+{
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+}
+
+footer .fa-chevron-up.animate__slideInUpCustom {
+  animation-name: slideInUpCustom;
+}
+
+
+@keyframes slideInUpCustom {
+  0% {
+    -webkit-transform: translate3d(0,50%,0);
+    transform: translate3d(0,50%,0);
+    visibility: visible;
+  }
+
+  100% {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+  }
+}
+
+@-ms-keyframes spin {
+  from { -ms-transform: rotate(0deg); }
+  to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}
+
+
+
